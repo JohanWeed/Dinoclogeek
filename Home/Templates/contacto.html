@@ -1,0 +1,49 @@
+{% extends 'index.html'%}
+{% block title %} Contacto | Dinoclogeek {% endblock %}
+
+{% block content %}
+<!--SECCION CINCO U CONTACTO-->
+<section class="seccion-contacto">
+  <div class="caja-contacto">
+      <article class="service-article">
+        <h1>CONTACTANOS:</h1>
+        <p>¡Hola a todos! Espero que se encuentren muy bien.
+          Les quiero invitar a que llenen el formulario de contacto que hemos
+          creado para poder estar en contacto directo con ustedes y así poder
+          resolver cualquier duda o inquietud que puedan tener.
+          Queremos asegurarnos de que tengan la mejor experiencia posible en
+          nuestro sitio y para ello es fundamental contar con su opinión y
+          sugerencias. Así que no duden en escribirnos, estamos esperando sus
+          comentarios. ¡Muchas gracias por su colaboración!</p>
+      </article>
+  </div>
+  <div class="caja-formulario" id="5">
+    <form method="POST" autocomplete="off">
+      {% csrf_token %}
+      <div>
+        {{form.name.label_tag}}
+        {{form.name}}
+      </div>
+
+      {{form.phone.label_tag}}
+      <div class="phoneFieldWrapper">
+        {{form.prefix}}
+        {{form.prefix.help_text}}
+        {{form.phone}}
+      </div>
+      <div>
+        {{form.email.label_tag}}
+        {{form.email}}
+      </div>
+      <div>
+        {{form.message.label_tag}}
+        {{form.message}}
+      </div>
+
+
+
+      <input type="submit" value="Contáctame">
+    </form>
+  </div>
+</section>
+{% endblock %}

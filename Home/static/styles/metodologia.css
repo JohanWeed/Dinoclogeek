@@ -1,0 +1,96 @@
+/*SECCIÓN CUATRO - METODOLOGIA*/
+.metodologia-section {
+  color: black;
+}
+
+.metodologia-section section {
+  margin: 0 auto;
+}
+
+.metodologia-section h2 {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 2.4em;
+}
+
+table {
+  font-size: 1.2em;
+  margin: 0 auto;
+  width: 81vw;
+  border-collapse: separate;
+  border-radius: 1em;
+  border-spacing: 0 1.2vw;
+}
+
+caption {
+  font-weight: bold;
+  font-size: 1.41em;
+  padding: 1.5vw 0;
+}
+
+.padre-circulo {
+  padding: 0 1vw;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
+
+.circulo {
+  background-color: var(--color-secundario-t);
+  border-radius: 50%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+td:nth-child(1) {
+  /*background-image: radial-gradient(circle, green, green, yellow);*/
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+td span {
+  font-size: 1.27em;
+  font-weight: bold;
+}
+
+/*Monitores*/
+@media screen and (min-width:970px) {
+  .circulo {
+    width: 4.7vw;
+    height: 4.7vw;
+  }
+
+}
+
+/*Tablet*/
+@media screen and (max-width:970px) and (min-width:670px) {
+  .circulo {
+    width: 6.6vw;
+    height: 6.6vw;
+  }
+}
+
+
+/*Movil*/
+
+@media screen and (max-width: 670px) and (min-width:100px) {
+  .metodologia-section {
+    width: 81vw;
+    display: block;
+    width: 81vw;
+    margin: 0 auto;
+  }
+
+  .circulo {
+    width: 12vw;
+    height: 12vw;
+  }
+
+  td {
+    padding: 1vw;
+  }
+}

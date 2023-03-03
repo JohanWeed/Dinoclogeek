@@ -1,0 +1,125 @@
+/*SECCION DOS*/
+.paquetes-section {
+  padding: 1.2vw 0;
+}
+.service-article {
+  margin: auto;
+  width: 81vw;
+  padding: 1vw 0;
+}
+
+
+.paquete {
+  background-color: white;
+}
+
+.cabecera-paquete {
+  color: white;
+  text-align: center;
+  background-color: var(--color-principal);
+  padding: .9vw 0vw 0vw 0vw;
+}
+
+.cabecera-paquete h2 {
+  width: auto;
+  padding: 0;
+  color: rgba(255, 255, 255, .9);
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.cabecera-paquete p {
+  font-style: italic;
+  font-size: .81em;
+}
+
+.cabecera-paquete h3 {
+  margin-top: .6vw;
+  font-size: 2.4em;
+}
+
+.cabecera-paquete h3 sup,
+span {
+  font-size: .45em;
+}
+
+.cuerpo-paquete {
+  color: var(--color-principal);
+  padding: .6vw;
+}
+
+.cuerpo-paquete ul li {
+  margin: 0;
+  padding: .54em 0 .54em 1em;
+  list-style: none;
+  background-image: url(https://dinoclogeek.com/wp-content/uploads/2022/12/vinetawebp.webp);
+  background-repeat: no-repeat;
+  background-position: 0em .9em;
+  background-size: .54em;
+}
+
+/* --- RESPONSIVE --- */
+
+/*Monitores*/
+@media screen and (min-width:970px) {
+
+  
+
+  .paquetes-section {
+    display: flex;
+    justify-content: center;
+  }
+
+  .paquete {
+    width: 21vw;
+  }
+
+}
+
+/*Tablets*/
+@media screen and (max-width:970px) and (min-width:670px) {
+  .paquete {
+    width: 81vw;
+    margin: 6vw auto;
+  }
+}
+
+/*Móviles*/
+@media screen and (max-width: 670px) and (min-width:100px) {
+  
+
+  .service-article p {
+    display: block;
+    margin: auto;
+    width: 81vw;
+  }
+
+  .paquetes-section {
+    width: 81vw;
+    display: block;
+    margin: auto;
+  }
+
+  .paquetes-section>div:nth-child(2) {
+    margin: 6vw 0;
+  }
+}
+
+
+
+
+/*Animacion Paquetes y precios*/
+.paquete:hover {
+  animation: crecer .6s 1;
+  transform: scale(1.06);
+}
+
+@keyframes crecer {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.06)
+  }
+}

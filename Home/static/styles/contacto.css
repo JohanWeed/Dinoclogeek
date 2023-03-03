@@ -1,0 +1,85 @@
+/*CONTACTO Y FORMULARIO*/
+.seccion-contacto {
+  padding: 3vw 0;
+  display: flex;
+  justify-content: center;
+}
+
+.caja-contacto {
+  font-size: 1.2em;
+  width: 45vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+}
+.caja-contacto > article{
+  width: 80%;
+}
+
+.caja-formulario {
+  padding: 2.7vw 0;
+  width: 36vw;
+  background-color: white;
+  border-radius: 1.5em;
+}
+
+form {
+  line-height: .6vw;
+  padding: .9vw 0;
+  margin: 0 auto;
+  width: 30vw;
+  color: rgb(0, 90, 0);
+}
+
+form h2 {
+  text-align: center;
+  padding: 0 0 3vw 0;
+
+}
+
+label {
+  margin: 2vw;
+}
+
+
+input[type="text"],
+input[type="email"],
+select ,
+textarea{
+  width: 90%;
+  padding: .6vw;
+  margin: 1.2vw auto;
+  display: block;
+  border: solid black 1.8px;
+  border-radius: 1vw;
+}
+
+.phoneFieldWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+input[name='phone'] {
+  width: 60%;
+}
+
+select {
+  width: 20%;
+}
+
+
+
+input[type="submit"] {
+  float: right;
+  background-color: red;
+  color: white;
+  padding: .6vw;
+  margin-right: 1.5vw;
+  border-radius: 1em;
+}
+
+/*.ui-loader {
+    display: none;
+  }*/

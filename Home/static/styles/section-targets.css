@@ -1,0 +1,41 @@
+
+/*SECCION TARJETAS DE DOS CARAS*/
+.contenedor-tarjeta {
+    color: var(--color-principal);
+    background-color: var(--color-secundario-t);
+    padding: 3vw 0;
+  }
+  
+  .caja-tarjeta {
+    padding: 0;
+    perspective: 100cm;
+    transition: all 0.3s ease 0s;
+  }
+  
+  .tarjeta {
+    border-radius: 1.5vw;
+    background-color: var(--color-secundario-t);
+    transform-style: preserve-3d;
+    font-size: .81em;
+  }
+  
+  .tarjeta-frente,
+  .tarjeta-atras {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    backface-visibility: hidden;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .tarjeta-atras h4 {
+    margin-bottom: .3vw;
+    font-weight: bold;
+    color: rgba(30, 180, 90, 1);
+  }
+  
+  
+  

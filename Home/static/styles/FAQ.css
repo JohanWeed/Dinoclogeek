@@ -1,0 +1,77 @@
+
+/*SECCION FAQ*/
+.seccion-faq {
+    color: var(--color-principal);
+    padding: 1.2vw 0;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .caja-faq {
+    width: 81vw;
+    margin: 0;
+  }
+  
+  .caja-faq h2 {
+    padding: 1.5vw 0;
+    text-align: center;
+  }
+  
+  .faq {
+    margin: 1vw 0;
+  }
+  
+  .faq h3 {
+    padding: .9vw 1vw;
+  
+  }
+  
+  .faq h3 i {
+    padding: 0 1vw;
+  }
+  
+  
+  .faq-respuesta {
+    display: none;
+    color: black;
+  }
+  .faq-respuesta p{
+    font-size: 1.2em;
+  }
+  
+  
+/*Animacion flechas seccion FAQ*/
+
+.rotarAbajo {
+  animation: rotarAbajo .5s 1;
+  transform: rotate(90deg);
+}
+
+@keyframes rotarAbajo {
+  from {
+    transform: rotate(0deg);
+
+  }
+
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+.rotarArriba {
+  animation: rotarArriba .5s 1;
+  transform: rotate(0deg);
+}
+
+@keyframes rotarArriba {
+  from {
+    transform: rotate(90deg);
+
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
