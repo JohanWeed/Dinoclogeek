@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,12 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'RENDER' not in os.environ
+DEBUG = False
 
-ALLOWED_HOSTS = []
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -46,7 +42,6 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware', 
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -80,22 +75,19 @@ WSGI_APPLICATION = 'dinoclogeek.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {  
-        'default': dj_database_url.config(
-            default='postgresql://postgres:postgres@localhost/postgres',
-            conn_max_age=600         
-        ) 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'db_dinoclogeek',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '',
+        'OPTIONS': {
+                'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
     }
-
-"""'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'db_dinoclogeek',
-            'USER': 'root',
-            'PASSWORD': '',
-            'HOST': 'localhost',
-            'PORT': '',
-            'OPTIONS': {
-                'init_command': "SET sql_mode='STRICT_TRANS_TABLES'
-            }"""
+}
 
 
 # Password validation
@@ -133,12 +125,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-if not DEBUG:    # Tell Django to copy statics to the `staticfiles` directory
-    # in your application directory on Render.
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    # Turn on WhiteNoise storage backend that takes care of compressing static files
-    # and creating unique names for each version so they can safely be cached forever.
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
